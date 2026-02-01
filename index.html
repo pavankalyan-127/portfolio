@@ -2,22 +2,38 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>G Pavan Kalyan | Data Engineer</title>
+<title>G Pavan Kalyan | Data Engineer Portfolio</title>
+
+<!-- ATS + SEO -->
+<meta name="description" content="G Pavan Kalyan – Data Engineer & Data Scientist fresher skilled in Python, SQL, AWS, Azure, Spark, ETL, Streaming, Machine Learning.">
+<meta name="keywords" content="Data Engineer, Data Scientist, Python, SQL, PySpark, AWS, Azure, ETL, Streaming, Machine Learning">
+<meta name="author" content="G Pavan Kalyan">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-/* ===================== GLOBAL ===================== */
+/* ================= RESET ================= */
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
   font-family:'Segoe UI',sans-serif;
-  background:radial-gradient(circle at top,#0a0f2c,#000);
+  background:#000;
   color:#e6e6e6;
   overflow-x:hidden;
 }
+
+/* ================= THREE.JS CANVAS ================= */
+#bg{
+  position:fixed;
+  inset:0;
+  z-index:-1;
+}
+
+/* ================= GLOBAL ================= */
 section{padding:90px 8%}
+h1,h2,h3{font-weight:600}
 h2{
-  font-size:2.5rem;
+  font-size:2.4rem;
   margin-bottom:40px;
   text-align:center;
   color:#00f7ff;
@@ -31,75 +47,58 @@ h2{
   box-shadow:0 0 30px rgba(0,247,255,.15);
 }
 
-/* ===================== HERO ===================== */
-#hero{
+/* ================= HERO ================= */
+header{
   height:100vh;
   display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
-  position:relative;
 }
-.hero-content{
-  transform-style:preserve-3d;
-}
-.hero-content h1{
+.hero h1{
   font-size:4rem;
   letter-spacing:3px;
   color:#fff;
-  text-shadow:0 0 30px rgba(0,247,255,.8);
 }
 .typing{
   margin-top:20px;
   font-size:1.4rem;
-  color:#b9f9ff;
+  color:#9efcff;
   min-height:30px;
 }
-.hero-buttons{
-  margin-top:35px;
-}
-.hero-buttons a{
+.hero a{
   display:inline-block;
-  padding:14px 32px;
-  margin:10px;
+  margin:25px 10px 0;
+  padding:14px 34px;
   border-radius:30px;
-  text-decoration:none;
-  color:#00f7ff;
   border:1px solid #00f7ff;
+  color:#00f7ff;
+  text-decoration:none;
   transition:.4s;
 }
-.hero-buttons a:hover{
+.hero a:hover{
   background:#00f7ff;
   color:#000;
   box-shadow:0 0 25px #00f7ff;
 }
 
-/* ===================== ABOUT ===================== */
-#about .glass{
-  max-width:900px;
-  margin:auto;
-  padding:40px;
-  font-size:1.1rem;
-  line-height:1.8;
-}
-
-/* ===================== SKILLS ===================== */
-.skills-grid{
+/* ================= SKILLS ================= */
+.grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-  gap:30px;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:25px;
 }
-.skill-card{
+.card{
   padding:25px;
   text-align:center;
   transition:.4s;
 }
-.skill-card:hover{
+.card:hover{
   transform:translateY(-10px) scale(1.05);
   box-shadow:0 0 25px #7f5cff;
 }
 
-/* ===================== EXPERIENCE ===================== */
+/* ================= TIMELINE ================= */
 .timeline{
   max-width:900px;
   margin:auto;
@@ -114,241 +113,189 @@ h2{
   height:100%;
   background:linear-gradient(#00f7ff,#7f5cff);
 }
-.timeline-item{
+.item{
   width:50%;
   padding:20px 40px;
-  position:relative;
 }
-.timeline-item.left{left:0;text-align:right}
-.timeline-item.right{left:50%}
-.timeline-dot{
-  position:absolute;
-  top:25px;
-  width:16px;
-  height:16px;
+.left{text-align:right}
+.right{margin-left:50%}
+.dot{
+  width:14px;
+  height:14px;
   background:#00f7ff;
   border-radius:50%;
   box-shadow:0 0 15px #00f7ff;
 }
-.left .timeline-dot{right:-8px}
-.right .timeline-dot{left:-8px}
 
-/* ===================== EDUCATION ===================== */
-.edu-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:30px;
-}
-.edu-card{
-  perspective:1000px;
-}
-.edu-inner{
-  position:relative;
-  transform-style:preserve-3d;
-  transition:transform .6s;
-}
-.edu-card:hover .edu-inner{
-  transform:rotateY(180deg);
-}
-.edu-face{
-  padding:30px;
-  backface-visibility:hidden;
-}
-.edu-back{
-  position:absolute;
-  inset:0;
-  transform:rotateY(180deg);
-}
-
-/* ===================== PROJECTS ===================== */
-.project-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:30px;
-}
-.project-card{
-  padding:30px;
+/* ================= PROJECTS ================= */
+.project:hover{
+  transform:rotateX(8deg) rotateY(-8deg) scale(1.05);
   transition:.4s;
 }
-.project-card:hover{
-  transform:rotateX(8deg) rotateY(-8deg) scale(1.05);
-  box-shadow:0 0 40px rgba(127,92,255,.6);
-}
-.badge{
-  display:inline-block;
-  margin:6px 6px 0 0;
-  padding:6px 12px;
-  border-radius:20px;
-  font-size:.8rem;
-  border:1px solid #00f7ff;
-}
 
-/* ===================== CONTACT ===================== */
-.contact-card{
+/* ================= CONTACT ================= */
+.contact{
   max-width:500px;
   margin:auto;
-  text-align:center;
   padding:40px;
+  text-align:center;
   border:2px solid #00f7ff;
-  box-shadow:0 0 30px #00f7ff;
 }
-.socials a{
-  margin:0 10px;
-  font-size:1.4rem;
-  color:#00f7ff;
-  text-decoration:none;
+.icons a{
+  margin:0 12px;
+  display:inline-block;
 }
-.socials a:hover{
-  text-shadow:0 0 20px #00f7ff;
+.icons svg{
+  width:28px;
+  height:28px;
+  fill:#00f7ff;
+  transition:.4s;
+}
+.icons svg:hover{
+  filter:drop-shadow(0 0 10px #00f7ff);
 }
 
-/* ===================== RESPONSIVE ===================== */
-@media(max-width:900px){
-.timeline::before{left:10px}
-.timeline-item{width:100%;left:0;padding-left:40px;text-align:left}
-.timeline-dot{left:2px}
+/* ================= ATS HIDDEN ================= */
+.ats{
+  position:absolute;
+  left:-9999px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
 }
 </style>
 </head>
 
 <body>
 
-<!-- HERO -->
-<section id="hero">
-  <div class="hero-content">
+<canvas id="bg"></canvas>
+
+<!-- ATS KEYWORDS -->
+<div class="ats">
+Data Engineer, Data Scientist, Python, SQL, PySpark, Spark Streaming, AWS S3, AWS Glue,
+Azure Databricks, Delta Lake, ETL, ELT, Machine Learning, Pandas, NumPy, Scikit-Learn,
+TensorFlow, PyTorch, Data Pipelines, Big Data, Cloud Computing
+</div>
+
+<header>
+  <div class="hero">
     <h1>G Pavan Kalyan</h1>
     <div class="typing" id="typing"></div>
-    <div class="hero-buttons">
-      <a href="#projects">View Projects</a>
-      <a href="#">Download Resume</a>
-    </div>
+    <a href="#projects">View Projects</a>
+    <a href="#">Download Resume</a>
   </div>
+</header>
+
+<main>
+
+<section>
+<h2>Profile</h2>
+<div class="glass card">
+Passionate Data Engineer & Data Scientist fresher with strong foundations in ETL, batch
+and streaming data pipelines, cloud platforms, and machine learning systems.
+</div>
 </section>
 
-<!-- ABOUT -->
-<section id="about">
-  <h2>Profile</h2>
-  <div class="glass">
-    Passionate Data Engineer & Data Scientist with strong foundations in ETL,
-    batch & streaming pipelines, cloud platforms, and machine learning systems.
-  </div>
+<section>
+<h2>Skills</h2>
+<div class="grid">
+<div class="glass card">Python • SQL</div>
+<div class="glass card">PySpark • Spark SQL</div>
+<div class="glass card">AWS • Azure Databricks</div>
+<div class="glass card">TensorFlow • PyTorch</div>
+<div class="glass card">MySQL • PostgreSQL</div>
+</div>
 </section>
 
-<!-- SKILLS -->
-<section id="skills">
-  <h2>Skills</h2>
-  <div class="skills-grid">
-    <div class="glass skill-card">Python • SQL</div>
-    <div class="glass skill-card">PySpark • Spark SQL</div>
-    <div class="glass skill-card">NumPy • Pandas • Scikit-Learn</div>
-    <div class="glass skill-card">TensorFlow • PyTorch</div>
-    <div class="glass skill-card">Azure Databricks • AWS</div>
-    <div class="glass skill-card">MySQL • PostgreSQL</div>
-  </div>
+<section>
+<h2>Projects</h2>
+<div class="grid">
+<div class="glass card project">
+<h3>RideStream</h3>
+<p>Real-time streaming analytics using AWS Kinesis & Spark.</p>
+</div>
+<div class="glass card project">
+<h3>LakehouseX</h3>
+<p>Batch ETL platform using Azure Databricks & Delta Lake.</p>
+</div>
+<div class="glass card project">
+<h3>Autonomous Vehicle Detection</h3>
+<p>DETR-based object detection with PyTorch.</p>
+</div>
+</div>
 </section>
 
-<!-- EXPERIENCE -->
-<section id="experience">
-  <h2>Experience</h2>
-  <div class="timeline">
-    <div class="timeline-item left">
-      <span class="timeline-dot"></span>
-      <div class="glass">
-        <h3>SOHAM Academy</h3>
-        <p>Intern & Innovation Coach<br>Apr 2024 – Oct 2024</p>
-        <p>Robotics training across 21 government schools.</p>
-      </div>
-    </div>
-  </div>
+<section>
+<h2>Contact</h2>
+<div class="contact glass">
+<p>
+<a href="mailto:gumdallipavankalyan2001@gmail.com">gumdallipavankalyan2001@gmail.com</a>
+</p>
+<p>
+<a href="tel:+917893504962">+91 7893504962</a>
+</p>
+
+<div class="icons">
+<a href="https://github.com/YOUR_GITHUB" target="_blank" aria-label="GitHub">
+<svg viewBox="0 0 24 24"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2.2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.2-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 .1.6 2.1 2.5 1.5.1-.7.4-1.1.7-1.4-2.6-.3-5.4-1.3-5.4-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.4 5.9.4.4.8 1 .8 2v3c0 .3.2.7.8.6A11.5 11.5 0 0 0 23.5 12C23.5 5.7 18.3.5 12 .5z"/></svg>
+</a>
+
+<a href="https://linkedin.com/in/YOUR_LINKEDIN" target="_blank" aria-label="LinkedIn">
+<svg viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 24h5V7H0v17zm7.5-17h4.8v2.3h.1c.7-1.3 2.3-2.6 4.7-2.6 5 0 5.9 3.3 5.9 7.6V24h-5v-7.6c0-1.8 0-4.1-2.5-4.1s-2.9 2-2.9 4v7.7h-5V7z"/></svg>
+</a>
+</div>
+</div>
 </section>
 
-<!-- EDUCATION -->
-<section id="education">
-  <h2>Education</h2>
-  <div class="edu-grid">
-    <div class="edu-card">
-      <div class="edu-inner">
-        <div class="glass edu-face">
-          <h3>M.Sc Computer Science</h3>
-          <p>Osmania University</p>
-        </div>
-        <div class="glass edu-face edu-back">
-          CGPA: 6.7
-        </div>
-      </div>
-    </div>
+</main>
 
-    <div class="edu-card">
-      <div class="edu-inner">
-        <div class="glass edu-face">
-          <h3>B.Sc MPCs</h3>
-          <p>Pragathi Maha Vidyalaya</p>
-        </div>
-        <div class="glass edu-face edu-back">
-          CGPA: 7.9
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PROJECTS -->
-<section id="projects">
-  <h2>Projects</h2>
-  <div class="project-grid">
-    <div class="glass project-card">
-      <h3>RideStream</h3>
-      <p>Real-time streaming analytics platform.</p>
-      <span class="badge">AWS</span><span class="badge">Spark</span>
-    </div>
-    <div class="glass project-card">
-      <h3>LakehouseX</h3>
-      <p>Enterprise batch ETL platform.</p>
-      <span class="badge">Azure</span><span class="badge">Delta Lake</span>
-    </div>
-    <div class="glass project-card">
-      <h3>Autonomous Vehicle Detection</h3>
-      <p>DETR-based object detection system.</p>
-      <span class="badge">PyTorch</span><span class="badge">HuggingFace</span>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-  <h2>Contact</h2>
-  <div class="contact-card glass">
-    <p>Email: <a href="mailto:gumdallipavankalyan2001@gmail.com">gumdallipavankalyan2001@gmail.com</a></p>
-    <p>Phone: <a href="tel:+917893504962">+91 7893504962</a></p>
-    <div class="socials">
-      <a href="#">GitHub</a>
-      <a href="#">LinkedIn</a>
-    </div>
-  </div>
-</section>
+<!-- THREE.JS -->
+<script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
 
 <script>
-/* Typing Effect */
+/* ===== TYPING ===== */
 const roles=["Data Engineer","Data Scientist","Cloud Data Specialist"];
-let i=0,j=0,forward=true;
-const el=document.getElementById("typing");
-
+let i=0,j=0,f=true;
+const t=document.getElementById("typing");
 setInterval(()=>{
-  if(forward){
-    el.innerText=roles[i].substring(0,++j);
-    if(j===roles[i].length)forward=false;
-  }else{
-    el.innerText=roles[i].substring(0,--j);
-    if(j===0){forward=true;i=(i+1)%roles.length}
-  }
+  if(f){t.textContent=roles[i].slice(0,++j);if(j===roles[i].length)f=false;}
+  else{t.textContent=roles[i].slice(0,--j);if(j===0){f=true;i=(i+1)%roles.length}}
 },120);
 
-/* Parallax */
-document.addEventListener("mousemove",e=>{
-  const x=(window.innerWidth/2-e.clientX)/40;
-  const y=(window.innerHeight/2-e.clientY)/40;
-  document.querySelector(".hero-content").style.transform=
-  `rotateY(${x}deg) rotateX(${y}deg)`;
+/* ===== THREE.JS PARTICLES ===== */
+const canvas=document.getElementById("bg");
+const scene=new THREE.Scene();
+const camera=new THREE.PerspectiveCamera(75,innerWidth/innerHeight,0.1,1000);
+const renderer=new THREE.WebGLRenderer({canvas,alpha:true});
+renderer.setSize(innerWidth,innerHeight);
+camera.position.z=5;
+
+const geo=new THREE.BufferGeometry();
+const count=1500;
+const pos=new Float32Array(count*3);
+for(let i=0;i<count*3;i++)pos[i]=(Math.random()-0.5)*20;
+geo.setAttribute('position',new THREE.BufferAttribute(pos,3));
+
+const mat=new THREE.PointsMaterial({
+  color:0x00f7ff,
+  size:0.03
+});
+const particles=new THREE.Points(geo,mat);
+scene.add(particles);
+
+function animate(){
+  particles.rotation.y+=0.0006;
+  particles.rotation.x+=0.0004;
+  renderer.render(scene,camera);
+  requestAnimationFrame(animate);
+}
+animate();
+
+addEventListener("resize",()=>{
+  camera.aspect=innerWidth/innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(innerWidth,innerHeight);
 });
 </script>
 
